@@ -1,14 +1,14 @@
 <template>
     <nav>
       <div class="nombrel">
-        <img style="width: 50px;height: auto;" src="../imagenes/logo sin texto 2.png" alt="Logo" class="h-10">
+        <router-link to="/"><img style="width: 50px;height: auto;" src="../imagenes/logo sin texto 2.png" alt="Logo" class="h-10"></router-link>
         <h3>Virtual Space</h3>
       </div>
   
       <div class="botones">
-        <router-link to="/contacto" class="opc"><h4>Contacto</h4></router-link>
+        <router-link to="/" class="opc" id="contacto" @click="$emit('scroll-to-contacto')"><h4>Contacto</h4></router-link>
         <router-link to="/paquete" class="opc"><h4>Paquete</h4></router-link>
-        <router-link to="/proyectos" class="opc"><h4>Proyectos</h4></router-link>
+        <router-link to="/proyectos" class="opc" ><h4>Proyectos</h4></router-link>
       </div>
     </nav>
   </template>
@@ -17,6 +17,10 @@
   import { useRouter } from 'vue-router';
   
   const router = useRouter();
+
+  import { defineEmits } from "vue";
+
+const emit = defineEmits(["scroll-to-contacto"]);
   </script>
 
 <style scoped>

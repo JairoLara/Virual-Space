@@ -1,5 +1,5 @@
 <template>
-    <NavBar />
+    <NavBar @scroll-to-contacto="scrollToBottom" />
     <div class="imagprin" >
         <img style="width: 50%;height: 50%;margin-top: 10px;box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);" src="https://s3-alpha-sig.figma.com/img/4cf9/c3eb/2c0b6b2b5eb422a8b4092c859d20ad4b?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=uQM9be8aQ8f7C~m45xOLgqujPwImBjoSIq~aI~GbcZssbeVxIZcoMUsalKmwpoQDdFOmapJWKn5UuAVb7L~vcJR9WEkCrwjF2gJ-vG6gxtHIlf6gaLH3kK3MBWVojj0sUYkFQe~CMZDFrAWkBcjqIuXKPkLkuYokNC6gVR-xzvxIycJ12UhAkBCk5omN1uaHi3O1xxx2VjzRfMxGpZdiRZrVciulBS7rd~8fBgwMziwwFWeKqL4ubyCpqmiY1DJ~V381gmOXGd38gB~RrExUKrac92MS8n0Ib4ONU0fB3O-IUsTHhOzxHZlP2T-eYvQYZmYJ69RqKkIVrTy9NHzShA__" alt="">
     </div>
@@ -18,11 +18,19 @@
   </template>
   
   <script setup lang="ts">
-  import { ref, onMounted } from "vue";
-  import { useRoute, useRouter } from "vue-router";
-  import NavBar from '@/components/NavBar.vue'; 
-  import ContactoC from '@/components/ContactoC.vue'; 
-  </script>
+import { onMounted, nextTick } from "vue";
+import NavBar from '@/components/NavBar.vue'; 
+import ContactoC from '@/components/ContactoC.vue'; 
+
+const scrollToBottom = () => {
+  nextTick(() => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  });
+};
+</script>
   
 <style scoped>
 .imagprin {
