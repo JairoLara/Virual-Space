@@ -1,6 +1,13 @@
 <template>
     <NavBar @scroll-to-contacto="handleScrollToContacto" />
     <div class="Bienvenida" ><h1 style="color: aliceblue;" >PAQUETE</h1></div>
+    <div class="texto"><p>Te imaginas poder mostrar tu negocio con un recorrido en 3D hiperrealista? Ahora es posible con nuestro paquete especial:
+<p>Lentes Oculus Quest 2 incluidos, para que disfrutes la experiencia sin necesidad de equipo adicional.</p>
+<p>Modelado 3D hiperrealista de tu negocio, adaptado con todos los detalles.</p>
+<p>Interacción inmersiva, permitiendo a tus clientes explorar tu espacio como si estuvieran ahí.</p>
+
+<p>Precio del paquete completo: <strong>$7,500 MXN</strong></p>
+</p></div>
     <div class="paq" style="background-color: #F1C5FC;" >
         <img style="width: 40%;height: 40%; " src="../imagenes/oculus-removebg-preview 1.png" alt="">
         <span style="font-size: 120px; margin-right: 20px;" >+</span>
@@ -34,9 +41,16 @@ const handleScrollToContacto = () => {
     align-items: center; 
     text-align: center; 
 }
+.texto{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: aliceblue;
+    font-size: 20px;
+}
 .trabajos{
     align-items: center; 
-    background-color: aliceblue;
+    background-color: rgb(10, 11, 11);
     padding: 5px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
