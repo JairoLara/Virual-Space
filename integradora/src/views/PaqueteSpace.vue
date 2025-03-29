@@ -18,7 +18,6 @@
   
   <script setup lang="ts">
 import { useRouter } from "vue-router";
-import { onMounted } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import ContactoC from "@/components/ContactoC.vue";
 
